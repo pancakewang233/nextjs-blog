@@ -1,19 +1,21 @@
-const {plugin} = require('next/dist/build/webpack/config/helpers')
-module.exports = {
-  reactStrictMode: true,
-  webpack: (config, options) => {
-    config.module.rules.push({
-      test: /\.png$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options:{
-            outputPath: 'static'
-          }
-        }
-      ]
-    })
+const path = require('path');
 
-    return config
-  }
-}
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+     {
+       test: /\.(png|svg|jpg|jpeg|gif)$/i,
+       type: 'asset/resource',
+     },
+    ],
+  },
+};
