@@ -2,7 +2,7 @@ import logo from 'assets/images/desktop.png';
 // 打印一下看看 logo 是什么
 console.log('logo的值: ', logo); 
 
-export default function Home() {
+export default function Index() {
   return (
     <div>
       <h1>标题1</h1>
