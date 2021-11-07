@@ -1,4 +1,4 @@
-import { usePosts } from "hooks/usePosts";
+
 import getPosts from "lib/posts";
 import { GetStaticProps, NextPage } from "next";
 
@@ -30,7 +30,7 @@ export const getStaticProps:GetStaticProps = async() =>{
     const posts = await getPosts()
     return {
         props: {
-            posts: posts
+            posts: JSON.parse(JSON.stringify(posts))
         }
     }
 }

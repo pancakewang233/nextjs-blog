@@ -1,6 +1,7 @@
 import fs, {promises as fsPromise} from 'fs'
 import path from "path";
 import matter from 'gray-matter'
+
 const getPosts = async() => {
     const markdownDir = path.join(process.cwd(), 'markdown')
     const fileNames = await fsPromise.readdir(markdownDir)
