@@ -1,4 +1,4 @@
-import getPosts from "lib/posts";
+import {getPosts} from "lib/posts";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const Posts = async(req: NextApiRequest, res: NextApiResponse) => {
