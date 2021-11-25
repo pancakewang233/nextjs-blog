@@ -1,30 +1,35 @@
 {
-  "name": "nextjs-blog-1",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "axios": "^0.24.0",
-    "gray-matter": "^4.0.3",
-    "next": "12.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "ua-parser-js": "^1.0.2"
-  },
-  "devDependencies": {
-    "@types/axios": "^0.14.0",
-    "@types/node": "^16.11.6",
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
-    "@types/ua-parser-js": "^0.7.36",
-    "eslint": "7.32.0",
-    "eslint-config-next": "12.0.1",
-    "next-images": "^1.8.1",
-    "typescript": "^4.4.4"
-  }
+   "name": "nextjs-blog-1",
+   "version": "0.1.0",
+   "private": true,
+   "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "ts-node src/index.ts",
+      "lint": "next lint",
+      "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
+   },
+   "dependencies": {
+      "axios": "^0.24.0",
+      "gray-matter": "^4.0.3",
+      "next": "12.0.1",
+      "pg": "^8.4.0",
+      "react": "17.0.2",
+      "react-dom": "17.0.2",
+      "reflect-metadata": "^0.1.10",
+      "typeorm": "0.2.41",
+      "ua-parser-js": "^1.0.2"
+   },
+   "devDependencies": {
+      "@types/axios": "^0.14.0",
+      "@types/node": "^8.0.29",
+      "@types/react": "^17.0.33",
+      "@types/react-dom": "^17.0.10",
+      "@types/ua-parser-js": "^0.7.36",
+      "eslint": "7.32.0",
+      "eslint-config-next": "12.0.1",
+      "next-images": "^1.8.1",
+      "typescript": "3.3.3333",
+      "ts-node": "3.3.0"
+   }
 }
