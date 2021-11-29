@@ -8,7 +8,7 @@ export class User {
   @PrimaryGeneratedColumn('increment')
   id: number;
   @Column('varchar')
-  username: string;
+  username: User;
   @Column('varchar')
   passwordDigest: string;
   @CreateDateColumn({type: 'timestamp'})
