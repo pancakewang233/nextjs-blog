@@ -1,7 +1,6 @@
 import {NextPage} from 'next';
 import React, {useCallback, useState} from 'react';
 import axios, {AxiosError, AxiosResponse} from 'axios';
-import {set} from 'lodash';
 
 const SignUp: NextPage = () => {
   const [signUpData, setSignUpData] = useState({
@@ -16,21 +15,21 @@ const SignUp: NextPage = () => {
   });
   const onSubmit = useCallback((e) => {
     e.preventDefault();
-    axios.post(`/api/v1/users`, signUpData).then(() => {
-      window.alert('注册成功')
+    axios.post(`/api/v1/sessions`, signUpData).then(() => {
+      window.alert('登录成功')
       window.location.href = '/sign_in'
     }, (error) => {
       if (error.response) {
         const response: AxiosResponse = error.response;
         if (response.status === 422) {
-          setErrors(response.data);
+          setErrors({...errors, ...response.data});
         }
       }
     });
   }, [signUpData]);
   return (
     <>
-      <h1>注册</h1>
+      <h1>登录</h1>
       <form onSubmit={onSubmit}>
         <div>
           <div>
@@ -58,19 +57,7 @@ const SignUp: NextPage = () => {
             </div>}
           </div>
           <div>
-            <label>
-              确认密码
-              <input type="password" value={signUpData.passwordConfirmation} onChange={e => setSignUpData({
-                ...signUpData,
-                passwordConfirmation: e.target.value
-              })}/>
-            </label>
-            {errors.passwordConfirmation?.length > 0 && <div>
-              {errors.passwordConfirmation.join(',')}
-            </div>}
-          </div>
-          <div>
-            <button type="submit">注册</button>
+            <button type="submit">登录</button>
           </div>
         </div>
       </form>
