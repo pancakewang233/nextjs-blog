@@ -1,4 +1,13 @@
-import {Column, CreateDateColumn, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn} from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  OneToOne,
+  PrimaryGeneratedColumn,
+  Unique,
+  UpdateDateColumn
+} from 'typeorm';
 import {Post} from './Post';
 import {Comment} from './Comment'
 import {JoinColumn} from 'typeorm/browser';

@@ -4,8 +4,8 @@ import {User} from 'src/entity/User';
 import md5 from 'md5';
 
 const Users = async (req: NextApiRequest, res: NextApiResponse) => {
+  const connection = await getDatabaseConnection();
   const {username, password, passwordConfirmation} = req.body;
-
   const errors = {
     username: [] as string[], password: [] as string[], passwordConfirmation: [] as string[]
   };
@@ -21,6 +21,10 @@ const Users = async (req: NextApiRequest, res: NextApiResponse) => {
   if (username.trim().length <= 3) {
     errors.username.push('太短');
   }
+  const found = connection.manager.find(User, {username});
+  if (found) {
+    errors.username.push('已存在，不能重复注册');
+  }
   if (password === '') {
     errors.password.push('不能为空');
   }
@@ -34,10 +38,11 @@ const Users = async (req: NextApiRequest, res: NextApiResponse) => {
     res.write(JSON.stringify(errors));
     res.end();
   } else {
-    const connection = await getDatabaseConnection();
+
     const user = new User();
     user.username = username.trim();
     user.passwordDigest = md5(password);
+
     await connection.manager.save(user);
     res.statusCode = 200;
     res.write(JSON.stringify(user));
