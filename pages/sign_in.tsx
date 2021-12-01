@@ -17,12 +17,11 @@ const SignUp: NextPage = () => {
     e.preventDefault();
     axios.post(`/api/v1/sessions`, signUpData).then(() => {
       window.alert('登录成功')
-      window.location.href = '/sign_in'
     }, (error) => {
       if (error.response) {
         const response: AxiosResponse = error.response;
         if (response.status === 422) {
-          setErrors({...errors, ...response.data});
+          setErrors(response.data);
         }
       }
     });
