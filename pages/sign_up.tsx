@@ -63,49 +63,6 @@ const SignUp: NextPage = () => {
           }
         ]}>
       </Form>
-      {/*<form onSubmit={onSubmit}>*/}
-      {/*  <div>*/}
-      {/*    <div>*/}
-      {/*      <label>*/}
-      {/*        用户名*/}
-      {/*        <input type="text" value={signUpData.username} onChange={e => setSignUpData({*/}
-      {/*          ...signUpData,*/}
-      {/*          username: e.target.value*/}
-      {/*        })}/>*/}
-      {/*      </label>*/}
-      {/*      {errors.username?.length > 0 && <div>*/}
-      {/*        {errors.username.join(',')}*/}
-      {/*      </div>}*/}
-      {/*    </div>*/}
-      {/*    <div>*/}
-      {/*      <label>*/}
-      {/*        密码*/}
-      {/*        <input type="password" value={signUpData.password} onChange={e => setSignUpData({*/}
-      {/*          ...signUpData,*/}
-      {/*          password: e.target.value*/}
-      {/*        })}/>*/}
-      {/*      </label>*/}
-      {/*      {errors.password?.length > 0 && <div>*/}
-      {/*        {errors.password.join(',')}*/}
-      {/*      </div>}*/}
-      {/*    </div>*/}
-      {/*    <div>*/}
-      {/*      <label>*/}
-      {/*        确认密码*/}
-      {/*        <input type="password" value={signUpData.passwordConfirmation} onChange={e => setSignUpData({*/}
-      {/*          ...signUpData,*/}
-      {/*          passwordConfirmation: e.target.value*/}
-      {/*        })}/>*/}
-      {/*      </label>*/}
-      {/*      {errors.passwordConfirmation?.length > 0 && <div>*/}
-      {/*        {errors.passwordConfirmation.join(',')}*/}
-      {/*      </div>}*/}
-      {/*    </div>*/}
-      {/*    <div>*/}
-      {/*      <button type="submit">注册</button>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</form>*/}
     </>
 
   );
