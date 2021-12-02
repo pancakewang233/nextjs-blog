@@ -23,6 +23,10 @@
     "/sign_in": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
+    ],
+    "/sign_up": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }
